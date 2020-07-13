@@ -11,6 +11,7 @@ class ChewieListItem extends StatefulWidget {
     @required this.videoPlayerController,
     this.looping,
     Key key,
+    Text title,
   }) : super(key: key);
 
   @override
