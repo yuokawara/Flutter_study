@@ -1,4 +1,4 @@
-name: imagepickup_app
+name: exam0710_app
 description: A new Flutter application.
 
 # The following line prevents the package from being accidentally published to
@@ -21,24 +21,9 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  image_picker:
   flutter:
     sdk: flutter
-  file_picker: ^1.12.0
-  image_picker:
-  image_cropper:
-  font_awesome_flutter:
-  firebase_core:
-  firebase_auth:
-  firebase_storage:
-  http:
-  provider:
-  path:
-  camera:
-  path_provider:
-  flutter_facebook_login:
-  flutter_svg:
-
-
 
 
   # The following adds the Cupertino Icons font to your application.
