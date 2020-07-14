@@ -27,14 +27,14 @@ class _LandingScreenState extends State<LandingScreen> {
     Navigator.of(context).pop();
   }
 
-  _openCamera(BuildContext context) async {
-    // ignore: deprecated_member_use
-    var picture = await ImagePicker.pickImage(source: ImageSource.camera);
-    this.setState(() {
-      imageFile = picture;
-    });
-    Navigator.of(context).pop();
-  }
+//  _openCamera(BuildContext context) async {
+//    // ignore: deprecated_member_use
+//    var picture = await ImagePicker.pickImage(source: ImageSource.camera);
+//    this.setState(() {
+//      imageFile = picture;
+//    });
+//    Navigator.of(context).pop();
+//  }
 
   Future<void> _showChoiceDialog(BuildContext context) {
     return showDialog(
@@ -54,12 +54,12 @@ class _LandingScreenState extends State<LandingScreen> {
                   Padding(
                     padding: EdgeInsets.all(5.0),
                   ),
-                  GestureDetector(
-                    child: Text('Camera'),
-                    onTap: () {
-                      _openCamera(context);
-                    },
-                  ),
+//                  GestureDetector(
+//                    child: Text('Camera'),
+//                    onTap: () {
+//                      _openCamera(context);
+//                    },
+//                  ),
                 ],
               ),
             ),

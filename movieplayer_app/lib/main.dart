@@ -95,7 +95,6 @@ class MyHomePage extends StatelessWidget {
               "videos/start01.mp4",
             ),
             looping: true,
-            Text("start01"),
           ),
           Text("start01"),
 
