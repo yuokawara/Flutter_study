@@ -15,39 +15,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyHomePage(),
-//      routes: <String, WidgetBuilder>{
-//        '/home': (BuildContext context) => new MyHomePage(),
-//        '/subpage': (BuildContext context) => new SubPage()
-//      },
     );
   }
 }
 
-//class SubPage extends StatelessWidget {
-//  @override
-//  Widget build(BuildContext context) {
-//    return new Scaffold(
-//      appBar: new AppBar(
-//        title: new Text('Navigator'),
-//      ),
-//      body: new Container(
-//        padding: new EdgeInsets.all(32.0),
-//        child: new Center(
-//          child: new Column(
-//            children: <Widget>[
-//              Text('sub'),
-//              RaisedButton(
-//                onPressed: () => Navigator.of(context).pop(),
-//                child: new Text('back'),
-//              )
-//            ],
-//          ),
-//        ),
-//      ),
-//    );
-//  }
-//}
-
+// ignore: must_be_immutable
 class MyHomePage extends StatelessWidget {
   Icon cusIcon = Icon(Icons.search);
   Widget cusSearchBar = Text("AppBar");
@@ -65,12 +37,6 @@ class MyHomePage extends StatelessWidget {
             icon: cusIcon,
             onPressed: () {
               showSearch(context: context, delegate: DataSearch());
-//              setState(() {
-//                if (this.cusIcon.icon == Icons.search) {
-//                  this.cusIcon = Icon(Icons.cancel);
-//                  this.cusSearchBar = TextField();
-//                }
-//              });
             },
           ),
           IconButton(
@@ -78,12 +44,6 @@ class MyHomePage extends StatelessWidget {
             icon: Icon(Icons.person_add),
           ),
         ],
-
-//        bottom: PreferredSize(
-//          preferredSize: Size(50, 50),
-//          child: Container(),
-//        ),
-
         title: cusSearchBar,
       ),
       drawer: Drawer(),
@@ -95,15 +55,19 @@ class MyHomePage extends StatelessWidget {
               "videos/start01.mp4",
             ),
             looping: true,
+            title: Text(
+              'movie01',
+              style:
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+            ),
           ),
-          Text("start01"),
 
           ChewieListItem(
             videoPlayerController: VideoPlayerController.network(
               "https://www9.nhk.or.jp/das/movie/D0002100/D0002100031_00000_V_000.mp4",
             ),
           ),
-          Text("test02"),
+          Text('test2'),
 //          ChewieListItem(
 //            // This URL doesn't exist - will display an error
 //            videoPlayerController: VideoPlayerController.network(
@@ -201,15 +165,43 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
+// SearchBar設定　暫定で手動で表記
 class DataSearch extends SearchDelegate<String> {
+  // ignore: non_constant_identifier_names
   final Movies = [
-    "Start01",
-    "test02",
+    "Movie01",
+    "Movie02",
+    "Movie03",
+    "Movie04",
+    "Movie05",
+    "Movie06",
+    "Movie07",
+    "Movie08",
+    "Movie09",
+    "Movie10",
+    "Movie11",
+    "Movie12",
+    "Movie13",
+    "Movie14",
+    "Movie15",
+    "Movie16",
+    "Movie17",
+    "Movie18",
+    "Movie19",
+    "Movie20",
   ];
-
+// 10まではassets対応予定
   final recentMovies = [
-    "Start01",
-    "test02",
+    "Movie01",
+    "Movie02",
+    "Movie03",
+    "Movie04",
+    "Movie05",
+    "Movie06",
+    "Movie07",
+    "Movie08",
+    "Movie09",
+    "Movie10",
   ];
 
   @override
@@ -241,18 +233,7 @@ class DataSearch extends SearchDelegate<String> {
   @override
   Widget buildResults(BuildContext context) {
     // Show some result
-    return Center(
-      child: Container(
-        width: 100,
-        height: 100,
-        child: Card(
-          color: Colors.deepOrange,
-          child: Center(
-            child: Text(query),
-          ),
-        ),
-      ),
-    );
+    return Center();
   }
 
   @override
