@@ -4,6 +4,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:video_player/video_player.dart';
+import 'package:okawara_search_test/screen/home_screen.dart';
 
 void main() => runApp(new MyApp());
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: VideoPlayerScreen(),
+      home: HomeScreen(),
     );
   }
 }

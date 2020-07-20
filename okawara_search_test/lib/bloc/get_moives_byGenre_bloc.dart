@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:okawara_search_test/model/movie_response.dart';
 import 'package:okawara_search_test/repository/repository.dart';
 import 'package:rxdart/rxdart.dart';
@@ -12,7 +13,13 @@ class MovieListByGenreBloc {
     _subject.sink.add(response);
   }
 
-  dispose() {
+  void drainStream() {
+    _subject.value = null;
+  }
+
+  @mustCallSuper
+  void dispose() async {
+    await _subject.drain();
     _subject.close();
   }
 
