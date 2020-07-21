@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:okawara_search_test/bloc/get_now_playing_bloc.dart';
 import 'package:okawara_search_test/model/movie.dart';
 import 'package:okawara_search_test/model/movie_response.dart';
 import 'package:page_indicator/page_indicator.dart';
+import 'package:okawara_search_test/style/theme.dart' as Style;
 
 class NowPlaying extends StatefulWidget {
   @override
@@ -10,6 +12,9 @@ class NowPlaying extends StatefulWidget {
 }
 
 class _NowPlayingState extends State<NowPlaying> {
+  PageController pageController =
+      PageController(viewportFraction: 1, keepPage: true);
+
   @override
   void initState() {
     super.initState();
@@ -75,17 +80,41 @@ class _NowPlayingState extends State<NowPlaying> {
           ],
         ),
       );
-    } else {
+    } else
       return Container(
         height: 200,
         child: PageIndicatorContainer(
           align: IndicatorAlign.bottom,
           indicatorSpace: 8.0,
           padding: EdgeInsets.all(5.0),
-          pageView: null,
+          indicatorColor: Style.Colors.titleColor,
+          indicatorSelectorColor: Style.Colors.secondColor,
+          shape: IndicatorShape.circle(size: 5.0),
+          pageView: PageView.builder(
+              controller: pageController,
+              scrollDirection: Axis.horizontal,
+              itemCount: movies.take(5).length,
+              itemBuilder: (context, index) {
+                return Stack(
+                  children: <Widget>[
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: 220,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.rectangle,
+                        image: DecorationImage(
+                          image: NetworkImage(
+                              'https://image.tmdb.org/t/p/original/' +
+                                  movies[index].backPoster),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    )
+                  ],
+                );
+              }),
           length: movies.take(5).length,
         ),
       );
-    }
   }
 }

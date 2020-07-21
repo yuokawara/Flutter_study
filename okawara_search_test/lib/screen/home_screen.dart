@@ -2,6 +2,7 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:okawara_search_test/style/theme.dart' as Style;
+import 'package:okawara_search_test/widget/now_playing.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -34,7 +35,9 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       body: ListView(
-        children: <Widget>[],
+        children: <Widget>[
+          NowPlaying(),
+        ],
       ),
     );
   }
