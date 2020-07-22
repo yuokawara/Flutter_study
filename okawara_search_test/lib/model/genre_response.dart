@@ -1,6 +1,4 @@
-import 'package:okawara_search_test/model/movie.dart';
-
-import 'genre.dart';
+import 'package:okawara_search_test/model/genre.dart';
 
 class GenreResponse {
   final List<Genre> genres;

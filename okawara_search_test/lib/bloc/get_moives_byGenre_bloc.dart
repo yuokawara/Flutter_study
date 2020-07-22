@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:okawara_search_test/model/movie_response.dart';
 import 'package:okawara_search_test/repository/repository.dart';
 import 'package:rxdart/rxdart.dart';
+import 'package:flutter/material.dart';
 
 class MovieListByGenreBloc {
   final MovieRepository _repository = MovieRepository();

@@ -1,5 +1,4 @@
 import 'package:okawara_search_test/model/genre_response.dart';
-import 'package:okawara_search_test/model/movie_response.dart';
 import 'package:okawara_search_test/repository/repository.dart';
 import 'package:rxdart/rxdart.dart';
 

@@ -1,4 +1,4 @@
-import 'package:okawara_search_test/model/movie.dart';
+import 'movie.dart';
 
 class MovieResponse {
   final List<Movie> movies;
